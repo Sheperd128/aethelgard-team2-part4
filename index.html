@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aethelgard Logistics | Personnel & Endpoint Terminal</title>
+    <style>
+        :root { 
+            --bg: #061a14; 
+            --card: #0b2920; 
+            --accent: #10b981; 
+            --text: #ecfdf5; 
+            --border: #134e4a; 
+            --error: #f43f5e; 
+            --warning: #f59e0b;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Courier New', Courier, monospace; line-height: 1.6; }
+        body { background-color: var(--bg); color: var(--text); padding: 3rem 1rem; display: flex; flex-direction: column; align-items: center; }
+
+        .container { max-width: 900px; width: 100%; background: var(--card); border: 1px solid var(--border); padding: 3rem; border-radius: 8px; box-shadow: 0 0 40px rgba(16,185,129,0.15); }
+
+        header { text-align: center; margin-bottom: 2.5rem; border-bottom: 1px dashed var(--border); padding-bottom: 1.5rem; }
+        header h1 { color: var(--accent); font-size: 2.2rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 0.5rem; }
+        header p { color: #6ee7b7; font-size: 1rem; }
+
+        .lore-section { margin-bottom: 2.5rem; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 1.05rem; color: #d1fae5; text-align: justify; }
+        .lore-section h2 { color: #ffffff; font-size: 1.4rem; margin-bottom: 1rem; border-left: 4px solid var(--accent); padding-left: 10px; text-transform: uppercase; letter-spacing: 1px; font-family: 'Courier New', Courier, monospace; }
+        .lore-section p { margin-bottom: 1.2rem; }
+
+        /* Hidden Links - Bold, but no underline, no color change */
+        .trigger { font-weight: bold; cursor: pointer; color: inherit; text-decoration: none; }
+
+        /* Final Endpoint Section */
+        .gate-section { background: #022c22; border: 1px solid var(--border); padding: 2rem; border-radius: 6px; margin-top: 3rem; text-align: center; }
+        input { width: 100%; max-width: 300px; padding: 0.9rem; background: var(--bg); border: 1px solid var(--border); color: #fff; font-size: 1.2rem; text-align: center; letter-spacing: 4px; margin: 1rem 0; border-radius: 4px; display: block; margin-left: auto; margin-right: auto; }
+        input:focus { outline: none; border-color: var(--accent); }
+        .btn { padding: 0.9rem 2rem; background: var(--accent); color: #022c22; border: none; font-weight: bold; font-size: 1.1rem; cursor: pointer; border-radius: 4px; text-transform: uppercase; }
+        .btn:hover { background: #059669; color: #fff; }
+        .error { color: var(--error); margin-top: 10px; display: none; font-weight: bold; }
+
+        #endpoint-section { display: none; margin-top: 3rem; border-top: 2px solid var(--error); padding-top: 3rem; }
+        .alert-banner { background: rgba(244, 63, 94, 0.1); border: 1px solid var(--error); color: var(--error); padding: 1rem; text-align: center; font-weight: bold; letter-spacing: 2px; margin-bottom: 2rem; border-radius: 4px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(244, 63, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(244, 63, 94, 0); } }
+
+        .evidence-block { background: #022c22; border: 1px solid var(--border); padding: 2rem; border-radius: 6px; margin-bottom: 2rem; position: relative; }
+        .evidence-block::before { content: "CLASSIFIED // EVIDENCE LOG"; position: absolute; top: -12px; left: 20px; background: var(--card); padding: 0 10px; color: var(--warning); font-size: 0.85rem; font-weight: bold; border-left: 1px solid var(--border); border-right: 1px solid var(--border); }
+        .transcript-line { margin-bottom: 1rem; font-size: 1.05rem; }
+        .name-beta { color: #38bdf8; font-weight: bold; }
+        .name-alpha { color: #a855f7; font-weight: bold; }
+
+        .conclusion { background: rgba(16, 185, 129, 0.1); border-left: 4px solid var(--accent); padding: 1.5rem; margin-bottom: 2rem; }
+        .conclusion h3 { color: #ffffff; margin-bottom: 0.5rem; text-transform: uppercase; font-family: 'Courier New', Courier, monospace; }
+        
+        #upload-status { display: none; margin-top: 1.5rem; text-align: center; color: var(--accent); font-weight: bold; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>PERSONNEL DOSSIERS</h1>
+            <p>INTERNAL AUDIT & SUSPECT OVERVIEW // LEVEL 4 CLEARANCE</p>
+        </header>
+
+        <!-- LORE & 10 HIDDEN TRIGGERS -->
+        <div class="lore-section">
+            <h2>Executive Restructuring</h2>
+            <p>Following the sudden demise of the Chief Executive Officer, a shadow fell over the central <a href="cipher1.html" class="trigger">operations</a> database. The board of directors immediately launched an internal probe to determine how a highly secure estate could be breached so cleanly. It became apparent that the assassination was not an external attack, but a coordinated internal purge designed to bury years of systemic corruption and embezzlement.</p>
+        </div>
+
+        <div class="lore-section">
+            <h2>S. A***N (Director of Expansion)</h2>
+            <p>A calculating presence within the upper echelons of the company, S. A***N oversees all global <a href="cipher2.html" class="trigger">logistics</a> and supply chain mapping. While projecting a calm, diplomatic demeanor, internal memos suggest he viewed the late CEO's sloppy financial crimes as a threat to the company's long-term survival. He is suspected of silently consolidating power, using the chaos of the investigation to replace loyalists with his own hand-picked successors under the guise of corporate absolute reform.</p>
+        </div>
+
+        <div class="lore-section">
+            <h2>V. Sanji (Executive Culinary Director)</h2>
+            <p>Recruited to manage the private dining and catering for the board, Sanji controls the executive <a href="cipher3.html" class="trigger">kitchen</a> at the Alpine estate. Despite his pristine reputation, hidden files indicate the CEO was actively blackmailing him over debts tied to a previous business venture. As one of the few staff members with unrestricted access to the estate's internal service elevators and food routing networks, his compliance was essential for moving personnel through the compound unnoticed.</p>
+        </div>
+
+        <div class="lore-section">
+            <h2>K. Nanami (Chief Compliance Officer)</h2>
+            <p>For years, Nanami meticulously managed the company’s legal boundaries. However, his breaking point arrived three months ago when the CEO demanded he falsify a massive corporate <a href="cipher4.html" class="trigger">audit</a> to hide the liquidation of public trust funds. Despising the toxic corporate culture and the blatant disregard for ethical governance, Nanami has been quietly gathering encrypted evidence. He knows exactly where the financial bodies are buried.</p>
+        </div>
+
+        <div class="lore-section">
+            <h2>K. Bakugo (Head of Physical Grid)</h2>
+            <p>An aggressive and highly capable tactical manager, Bakugo commands the perimeter defense and internal <a href="cipher5.html" class="trigger">security</a> protocols. His relationship with the CEO rapidly deteriorated after his division's budget was slashed to cover the executive board's gambling losses. Bakugo holds the physical master keys to the automated circuit breakers. Without his direct (or coerced) involvement, the estate's lockdown mechanisms could never have been manually bypassed.</p>
+        </div>
+
+        <div class="lore-section">
+            <h2>U. N****O (Director of Philanthropy)</h2>
+            <p>A deeply idealistic junior executive, N****O was placed in charge of the company’s charitable <a href="cipher6.html" class="trigger">foundation</a>. He recently discovered that the board intended to liquidate the charity and frame his department for the missing funds. Driven by a fierce need to protect the marginalized communities his charity supported, he sought a way to expose the board's crimes. Intelligence suggests his idealism made him the perfect unwitting pawn for a more sinister architect.</p>
+        </div>
+
+        <div class="lore-section">
+            <h2>U. Tengen (Corporate Relations)</h2>
+            <p>Flamboyant and highly visible, Tengen orchestrates the company's massive public relations <a href="cipher7.html" class="trigger">events</a>. While seemingly distracted by the glitz and glamour of his role, forensic accounting shows massive spikes in his budget allocations immediately prior to the CEO's death. It is theorized that his lavish galas were being used to launder the embezzled funds, making him a prime target for the CEO’s blackmail leverage.</p>
+        </div>
+
+        <div class="lore-section">
+            <h2>The Night of the Purge</h2>
+            <p>The night the CEO was eliminated, standard protocols were shattered. The human resources division had coincidentally forced all non-essential staff into mandatory <a href="cipher8.html" class="trigger">overtime</a> at the secondary facility, leaving the Alpine estate drastically understaffed. The remaining personnel were isolated, their communication lines severed.</p>
+            
+            <p>Precisely at midnight, the grid failed. The synchronized <a href="cipher9.html" class="trigger">blackout</a> plunged the estate into total darkness, disabling the surveillance arrays and electronic locks simultaneously. In the aftermath, the perpetrators ensured that the financial servers were copied and the incriminating charity documents were secured. What was sold to the accomplices as a bloodless corporate whistleblowing operation was, in reality, a lethal execution designed to mimic poetic <a href="cipher10.html" class="trigger">justice</a>.</p>
+        </div>
+
+        <!-- Master Code Gate (Only opens with Cipher 10's reward) -->
+        <div class="gate-section">
+            <h3 style="color: #ffffff; margin-bottom: 0.5rem;">MASTER DECRYPTION</h3>
+            <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 1rem;">Complete all 10 scattered terminal nodes to retrieve the final override code.</p>
+            <input type="text" id="master-code" placeholder="ENTER FINAL CODE" maxlength="10" autocomplete="off">
+            <button class="btn" onclick="verifyMasterCode()">UNSEAL ENDPOINT</button>
+            <div class="error" id="error-msg">ACCESS DENIED. INVALID OVERRIDE.</div>
+        </div>
+
+        <!-- FINAL ENDPOINT -->
+        <div id="endpoint-section">
+            <div class="alert-banner">WARNING: ROOT ACCESS DETECTED. FINAL LOGS UNSEALED.</div>
+            
+            <header>
+                <h1>ENDPOINT TERMINAL</h1>
+                <p>LOGISTICS & POWER GRID OVERRIDE // TEAM 2 CONCLUSION</p>
+            </header>
+
+            <div class="conclusion">
+                <h3>INVESTIGATION COMPLETE</h3>
+                <p>You have successfully bypassed all firewalls within the Aethelgard Logistics network. The recovered data proves that the charity foundation was being used as a front for corporate embezzlement. However, the junior staff member running the charity did not act alone in the blackout.</p>
+            </div>
+
+            <div class="evidence-block">
+                <div class="transcript-line">
+                    <span class="name-beta">[N****O - "BETA"]:</span> What did you do? The news is saying the CEO is dead! You told me if I isolated the grid and cut the estate's power, it would just trigger an automated lock-in so we could copy the financial servers!
+                </div>
+                <div class="transcript-line">
+                    <span class="name-alpha">[A***N - "ALPHA"]:</span> Calm yourself. The financial data is secure, and the charity foundation is safe from liquidation. I promised to protect your vision, and I have.
+                </div>
+                <div class="transcript-line">
+                    <span class="name-beta">[N****O - "BETA"]:</span> You used me! I bypassed the physical security gates for you, and you used the blackout to have him killed! I'm going to the authorities!
+                </div>
+                <div class="transcript-line">
+                    <span class="name-alpha">[A***N - "ALPHA"]:</span> You will do no such thing. My digital footprints do not exist. Yours, however, are all over the blackout protocol. You are a hero to the people your charity feeds. Do not throw that away for a corrupt CEO who viewed you as a disposable liability. 
+                </div>
+                <div class="transcript-line" style="color: var(--text-muted); font-style: italic; margin-top: 1.5rem;">
+                    [CONNECTION TERMINATED BY ALPHA]
+                </div>
+            </div>
+
+            <div class="conclusion" style="border-left-color: var(--warning); background: rgba(245, 158, 11, 0.1);">
+                <h3 style="color: var(--warning);">CASE SUMMARY: TEAM 2</h3>
+                <p><strong>The Logistics Link:</strong> N****O was manipulated by A***N into disabling the power grid, believing he was executing a bloodless corporate whistleblowing operation to save his charity. A***N weaponized N****O's idealism to create the perfect blind spot for the assassination.</p>
+            </div>
+
+            <button class="btn" style="width: 100%;" onclick="submitEvidence()">SUBMIT EVIDENCE TO MASTER DATABASE</button>
+            <div id="upload-status">UPLOADING TEAM 2 DOSSIER... [ 100% ]<br><br><span style="color: #fff;">Excellent work, Team 2. Await further instructions from the Game Master.</span></div>
+        </div>
+    </div>
+
+    <script>
+        function verifyMasterCode() {
+            const val = document.getElementById('master-code').value.toUpperCase().trim();
+            const error = document.getElementById('error-msg');
+            
+            // The code they will receive from cipher10.html
+            if(val === "ABSOLUTE") {
+                document.getElementById('endpoint-section').style.display = 'block';
+                document.querySelector('.gate-section').style.display = 'none';
+                error.style.display = 'none';
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            } else {
+                error.style.display = 'block';
+                setTimeout(() => error.style.display = 'none', 2000);
+            }
+        }
+
+        function submitEvidence() {
+            const btn = document.querySelector('#endpoint-section .btn');
+            const status = document.getElementById('upload-status');
+            btn.style.display = 'none';
+            status.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

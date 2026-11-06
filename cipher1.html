@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node 1 | Cipher</title>
+    <style>
+        body { background: #061a14; color: #ecfdf5; font-family: monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .box { background: #0b2920; padding: 3rem; border: 1px solid #10b981; border-radius: 8px; text-align: center; max-width: 500px; width: 90%; }
+        h2 { color: #10b981; }
+        .puzzle { font-size: 1.5rem; letter-spacing: 5px; color: #f59e0b; margin: 2rem 0; padding: 1rem; border: 1px dashed #134e4a; }
+        input { width: 100%; padding: 1rem; background: #022c22; border: 1px solid #134e4a; color: #fff; font-size: 1.1rem; text-align: center; margin-bottom: 1rem; }
+        .btn { width: 100%; padding: 1rem; background: #10b981; color: #022c22; font-weight: bold; border: none; cursor: pointer; text-transform: uppercase; }
+        #reward { display: none; margin-top: 1.5rem; color: #34d399; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>NODE 1: REVERSAL</h2>
+        <p>A file name was scrambled backward during the blackout. Decrypt it to receive the next access code.</p>
+        <div class="puzzle">SNOITARAPERP</div>
+        <p style="font-size:0.8rem; color:#6ee7b7;">Hint: Read from right to left.</p>
+        
+        <input type="text" id="ans" placeholder="ENTER DECRYPTED WORD" autocomplete="off">
+        <button class="btn" onclick="check()">SUBMIT</button>
+        
+        <div id="reward">
+            <h3>SUCCESS</h3>
+            <p>Your Access Code for the next node is: <strong style="color: #f59e0b;">ENVOY</strong></p>
+            <p style="font-size: 0.9rem;">Return to the dossier. Find the domain of <strong>Corporate Relations</strong> to continue.</p>
+            <a href="index.html" style="color: #10b981;">Return to Hub</a>
+        </div>
+    </div>
+    <script>
+        function check() {
+            if(document.getElementById('ans').value.toUpperCase().trim() === "PREPARATIONS") {
+                document.getElementById('reward').style.display = "block";
+            } else { alert("ACCESS DENIED"); }
+        }
+    </script>
+</body>
+</html>
